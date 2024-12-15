@@ -1,0 +1,20 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "title": "React Basics",
+      "category": "Frontend",
+      "image": "https://placehold.co/600x400",
+      "description": "Learn React from scratch.",
+      "url": "https://www.youtube.com/watch?v=w7ejDZ8SWv8"
+    },
+    {
+      "id": 2,
+      "title": "Node.js Fundamentals",
+      "category": "Backend",
+      "image": "https://placehold.co/600x400",
+      "description": "Introduction to Node.js development",
+      "url": "https://www.youtube.com/watch?v=TlB_eWDSMt4"
+    }
+  ]
+}

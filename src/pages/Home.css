@@ -1,0 +1,90 @@
+/* Contenedor principal */
+.categories {
+  padding: 2rem;
+  background-color: #06001c; /* Fondo gris claro */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Alerta de error */
+.categories .bg-red-100 {
+  background-color: #fee2e2; /* Fondo rojo claro */
+  border-color: #f87171; /* Borde rojo */
+  color: #b91c1c; /* Texto rojo oscuro */
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Sección de cada categoría */
+.categories section {
+  margin-bottom: 2rem;
+}
+
+/* Botones de categorías */
+.categoria {
+    width: 420px;
+    height: 70px;
+   display: flex;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+ align-items: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoria:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Colores personalizados para cada botón */
+.categoria.Frontend {
+  background-color: #3b82f6; /* Azul */
+}
+
+.categoria.Backend {
+  background-color: #10b981; /* Verde */
+}
+
+.categoria.Innovación {
+  background-color: #f59e0b; /* Amarillo */
+}
+
+/* Carrusel Swiper */
+.swiper-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  padding: .1rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #3b82f6; /* Color de flechas */
+}
+
+.swiper-pagination-bullet {
+  background-color: #cdd1d898; /* Gris claro */
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3b82f6; /* Azul */
+  opacity: 1;
+}
+

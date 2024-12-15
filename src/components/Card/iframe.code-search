@@ -1,0 +1,32 @@
+# Query: iframe
+# ContextLines: 1
+
+6 resultados - Archivos de 4
+
+src/components/Banner/Banner.css:
+  41  
+  42: iframe {
+  43    display: flex;
+
+src/components/Banner/Banner.jsx:
+  15      <div className="videoSection">
+  16:       <iframe 
+  17          width="660" 
+
+  23          referrerPolicy="strict-origin-when-cross-origin" 
+  24:         allowFullScreen></iframe>
+  25      </div>
+
+src/components/Card/Card.css:
+  20  .card img,
+  21: .card iframe {
+  22    width: 660px;
+
+src/components/Card/Card.jsx:
+  10  
+  11:         <iframe 
+  12            width="660px" 
+
+  19            allowFullScreen
+  20:         ></iframe>
+  21        <div className="actions">

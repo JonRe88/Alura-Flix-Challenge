@@ -1,0 +1,22 @@
+.swiper{
+  width: 680px;
+}
+
+.slider {
+  display: flex;
+  width: 600px;
+  overflow-x: auto;
+
+}
+.slider-section {
+  margin-bottom: 1rem;
+}
+
+.slider-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #dae2eb;
+}
+.swiper-slide {
+  width: 600px;
+}

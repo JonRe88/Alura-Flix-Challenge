@@ -1,0 +1,62 @@
+.card {
+  background-color: #ffffff0d;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 320px;
+  width: 430px;
+ /* Ancho máximo de la tarjeta */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Permite colocar elementos superpuestos */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen o video dentro de la tarjeta */
+.card img,
+.card iframe {
+  width: 430px;
+  height: 260px; /* Altura fija para mantener consistencia */
+  object-fit: cover; /* Asegura que el contenido se ajuste bien */
+  border-bottom: 3px solid #989da8;
+}
+.card .actions {
+  display: flex;
+  height: 55px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(3, 1, 29, 0.989);
+
+}
+
+.card button {
+  background-color:  rgba(14, 47, 97, 0.937);
+  font-size: 1.1rem;
+  padding: .1rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 10px 4px 4px 4px rgb(255, 255, 255);
+  width: 140px;
+  height: 30px;
+  align-items: center;
+  border: 2px rgb(225, 234, 237) solid;
+border-radius: 8px;
+}
+
+/* Estilos específicos para cada categoría */
+.card-frontend {
+  box-shadow: 1px 1px 15px 1px rgb(21, 110, 252);
+}
+
+.card-backend {
+  box-shadow:1px 1px 15px 1px rgb(0, 123, 86);
+}
+
+.card-innovación{
+  box-shadow: 1px 1px 15px 1px rgb(255, 186, 5);
+}
+

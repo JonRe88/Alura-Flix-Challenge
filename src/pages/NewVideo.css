@@ -1,0 +1,143 @@
+/* Contenedor principal */
+main {
+  padding: 1.5rem;
+  background-color: #020223; /* Fondo gris claro */
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Encabezados */
+main h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #3e70ce;
+}
+
+main .parrafo {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3e70ce;
+}
+
+main .nuevo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444444;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Formulario */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff0f;
+  box-shadow: 0 4px 6px rgba(127, 194, 235, 0.266);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* Etiquetas de los campos */
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #9eadc5;
+}
+
+/* Inputs y Textarea */
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #2066ce;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #90c2fc;
+  background-color: #f9fafb10;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Estilo específico para errores */
+form input.border-red-500,
+form textarea.border-red-500 {
+  border-color: #ef4444;
+}
+
+form p.text-red-500 {
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+/* Botones */
+form .flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Botón Guardar */
+form button.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+form button.bg-blue-500:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Botón Limpiar */
+form button.bg-gray-500 {
+  background-color: #6b7280;
+}
+
+form button.bg-gray-500:hover {
+  background-color: #4b5563;
+  transform: scale(1.05);
+}
+
+/* Barra de progreso */
+form .bg-gray-300 {
+  background-color: #e5e7eb;
+}
+
+form .bg-blue-500 {
+  background-color: #3b82f6;
+  transition: width 0.5s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  form {
+    padding: 1rem;
+  }
+}
