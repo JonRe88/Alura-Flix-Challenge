@@ -18,7 +18,7 @@ export default function BannerVideo() {
   const thumbnailUrl = "https://img.youtube.com/vi/ov7vA5HFe6w/maxresdefault.jpg";
 
   return (
-    <div className="w-10 aspect-video rounded-lg boxShadow shadow-indigo-600 border-2 overflow-hidden  transition-transform hover:scale-105 shadow-2xl"
+    <div className="w-full aspect-video rounded-lg boxShadow shadow-indigo-600 border-2 overflow-hidden  transition-transform hover:scale-105 shadow-2xl"
      >
       <a
         href={videoUrl}
@@ -29,7 +29,7 @@ export default function BannerVideo() {
         <img 
           src={thumbnailUrl}
           alt="Challenge React"
-          className=" h-200 object-cover rounded-lg  shadow-indigo-600"
+          className=" w-full object-cover rounded-lg  shadow-indigo-600"
           style={{ 
             border: '2px solid rgba(30, 20, 212, 0.947)',
             boxShadow: '12px 20px 40px rgb(109, 103, 217)'
