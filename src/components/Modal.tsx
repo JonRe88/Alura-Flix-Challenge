@@ -27,19 +27,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, videoData, onSave }) => 
   });
 
   useEffect(() => {
-    if (videoData) setFormData(videoData);
+    if (videoData) {
+      setFormData(videoData);
+    } else {
+      setFormData({ title: '', category: 'frontend', videoUrl: '', description: '' });
+    }
   }, [videoData]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSave(formData);
-    toast.success(`Video ${formData.id ? 'actualizado' : 'agregado'} correctamente`);
   };
 
   if (!isOpen) return null;
