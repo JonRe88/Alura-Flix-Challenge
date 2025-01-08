@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 interface VideoData {
   id?: string;
@@ -114,7 +113,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, videoData, onSave }) => 
             </button>
           </div>
         </form>
-        <ToastContainer />
+
       </div>
     </div>
   );
