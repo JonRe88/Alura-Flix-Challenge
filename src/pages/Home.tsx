@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import CategorySection from '../components/CategorySection';
 import Modal from '../components/Modal';
 import { COLORS } from '../styles/colors';
+
 
 // Sample data with video URLs and thumbnails
 const initialVideos = {
@@ -91,7 +92,6 @@ export default function Home() {
   };
 
   const handleDeleteVideo = (id: string) => {
-    // Implement delete functionality
     const updatedVideos = Object.fromEntries(
       Object.entries(videos).map(([category, categoryVideos]) => [
         category,
@@ -102,17 +102,22 @@ export default function Home() {
   };
 
   const handleSaveVideo = (data: any) => {
+    const updatedVideos = { ...videos };
+
+    // Remove the video from its old category if it exists
     if (editingVideo) {
-      const updatedVideos = Object.fromEntries(
-        Object.entries(videos).map(([category, categoryVideos]) => [
-          category,
-          categoryVideos.map(video => 
-            video.id === editingVideo.id ? { ...video, ...data } : video
-          )
-        ])
+      updatedVideos[editingVideo.category] = updatedVideos[editingVideo.category].filter(
+        (video: any) => video.id !== editingVideo.id
       );
-      setVideos(updatedVideos);
     }
+
+    // Add the video to its new category
+    if (!updatedVideos[data.category]) {
+      updatedVideos[data.category] = [];
+    }
+    updatedVideos[data.category].push(data);
+
+    setVideos(updatedVideos);
     setIsModalOpen(false);
     setEditingVideo(null);
   };
@@ -120,35 +125,18 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      
-      <div className="uppercase max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <CategorySection
-          title="Frontend"
-          color={COLORS.FRONTEND}
-          videos={videos.frontend}
-          onEditVideo={handleEditVideo}
-          onDeleteVideo={handleDeleteVideo}
-          category="frontend"
-        />
-        
-        <CategorySection
-          title="Backend "
-          color={COLORS.BACKEND}
-          videos={videos.backend}
-          onEditVideo={handleEditVideo}
-          onDeleteVideo={handleDeleteVideo}
-          category="backend"
-        />
-        
-        <CategorySection
-          title="Innovación y Gestión"
-          color={COLORS.INNOVATION}
-          videos={videos.innovation}
-          onEditVideo={handleEditVideo}
-          onDeleteVideo={handleDeleteVideo}
-          category="innovation"
-        />
-      </div>
+      {Object.entries(videos).map(([category, categoryVideos]) => (
+        <div key={category} className="uppercase max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CategorySection
+            title={category.charAt(0).toUpperCase() + category.slice(1)}
+            color={COLORS[category.toUpperCase()]}
+            videos={categoryVideos}
+            onEditVideo={handleEditVideo}
+            onDeleteVideo={handleDeleteVideo}
+            category={category}
+          />
+        </div>
+      ))}
 
       <Modal
         isOpen={isModalOpen}
